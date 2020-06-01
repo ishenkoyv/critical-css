@@ -31,6 +31,14 @@ class CriticalCssServiceProvider extends ServiceProvider
                 $this->app['view']->getEngineResolver()->resolve('blade')->getCompiler()
             );
         }
+
+		if ($this->app->runningInConsole()) {
+			$this->commands([
+				\Alfheim\CriticalCss\Console\CriticalCssClear::class,
+				\Alfheim\CriticalCss\Console\CriticalCssCommand::class,
+				\Alfheim\CriticalCss\Console\CriticalCssMake::class,
+			]);
+		}
     }
 
     /**
