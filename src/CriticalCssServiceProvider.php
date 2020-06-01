@@ -35,7 +35,6 @@ class CriticalCssServiceProvider extends ServiceProvider
 		if ($this->app->runningInConsole()) {
 			$this->commands([
 				\Alfheim\CriticalCss\Console\CriticalCssClear::class,
-				\Alfheim\CriticalCss\Console\CriticalCssCommand::class,
 				\Alfheim\CriticalCss\Console\CriticalCssMake::class,
 			]);
 		}
